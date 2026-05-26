@@ -19,21 +19,21 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://strk20.dev"),
-  title: "STRK20 — Build the privacy layer for on-chain finance",
+  title: "STRK20 - Build the privacy layer for on-chain finance",
   description:
-    "Open problems Starkware wants solved on STRK20 — the standard for compliant, programmable privacy on Starknet. Find one that fits, talk to us.",
+    "Open problems Starkware wants solved on STRK20 - the standard for compliant, programmable privacy on Starknet. Find one that fits, talk to us.",
   openGraph: {
-    title: "STRK20 — Build the privacy layer for on-chain finance",
+    title: "STRK20 - Build the privacy layer for on-chain finance",
     description:
-      "Open problems Starkware wants solved on STRK20 — the standard for compliant, programmable privacy on Starknet. Find one that fits, talk to us.",
+      "Open problems Starkware wants solved on STRK20 - the standard for compliant, programmable privacy on Starknet. Find one that fits, talk to us.",
     type: "website",
     siteName: "STRK20",
   },
   twitter: {
     card: "summary_large_image",
-    title: "STRK20 — Build the privacy layer for on-chain finance",
+    title: "STRK20 - Build the privacy layer for on-chain finance",
     description:
-      "Open problems Starkware wants solved on STRK20 — the standard for compliant, programmable privacy on Starknet. Find one that fits, talk to us.",
+      "Open problems Starkware wants solved on STRK20 - the standard for compliant, programmable privacy on Starknet. Find one that fits, talk to us.",
   },
 };
 

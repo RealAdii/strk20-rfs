@@ -3,7 +3,7 @@ title: "Sealed-bid auctions where the bids are actually sealed"
 slug: "sealed-bid-auctions"
 ideaNumber: "08"
 genre: "markets-trading"
-pitch: "Bids are encrypted STRK20 notes — invisible to everyone, including the auctioneer, until reveal. First-price, second-price Vickrey, and multi-unit auctions, all with cryptographic bid sealing that's impossible on any transparent chain."
+pitch: "Bids are encrypted STRK20 notes - invisible to everyone, including the auctioneer, until reveal. First-price, second-price Vickrey, and multi-unit auctions, all with cryptographic bid sealing that's impossible on any transparent chain."
 primitives:
   - Privacy Pool
   - Encrypted Notes
@@ -17,15 +17,15 @@ publishedAt: "2026-05-26"
 
 ## What this enables
 
-- **Economically optimal auctions on-chain.** Vickrey (second-price sealed-bid) is the gold standard of auction theory — bidding your true value is dominant strategy, allocations are efficient, revenue is fair. Known since 1961 but never deployable on-chain because sealed bids were impossible without a trusted auctioneer. STRK20 makes them native.
-- **NFT auctions without sniping or manipulation.** Bots sniping last-second bids? Irrelevant when all bids are submitted before the deadline. Wash bidding? Now requires actually locking funds *and* being the second-highest bidder. Whale intimidation? Impossible — nobody sees anyone else's bid.
+- **Economically optimal auctions on-chain.** Vickrey (second-price sealed-bid) is the gold standard of auction theory - bidding your true value is dominant strategy, allocations are efficient, revenue is fair. Known since 1961 but never deployable on-chain because sealed bids were impossible without a trusted auctioneer. STRK20 makes them native.
+- **NFT auctions without sniping or manipulation.** Bots sniping last-second bids? Irrelevant when all bids are submitted before the deadline. Wash bidding? Now requires actually locking funds *and* being the second-highest bidder. Whale intimidation? Impossible - nobody sees anyone else's bid.
 - **DAO grant allocation that ends anchoring.** Projects submit sealed funding requests; the DAO reveals simultaneously and funds from the lowest ask. No anchoring on Project A's number when Project B writes theirs. No social pressure, no gaming.
 - **Protocol parameter auctions.** Block space, sequencer priority, MEV-style auctions allocated by sealed-bid Vickrey instead of speed-based first-come-first-served. The fastest bot stops winning; the highest-value buyer does.
-- **Institutional M&A and RWA.** Real estate, business acquisitions, art — all conducted via sealed-bid auctions in traditional finance. Bringing them on-chain requires actually-sealed bids, not commit-reveal with griefing risk.
+- **Institutional M&A and RWA.** Real estate, business acquisitions, art - all conducted via sealed-bid auctions in traditional finance. Bringing them on-chain requires actually-sealed bids, not commit-reveal with griefing risk.
 
 ## What you build
 
-An auction protocol with three phases: listing (auctioneer creates parameters), bidding (bidders submit encrypted notes — real escrowed funds, not just commitments), reveal (selective disclosure of bid amounts via viewing key material — revealed amounts must match the encrypted notes, or the bid is forfeit). Force-reveal via threshold auditing if a bidder goes offline. Support first-price, Vickrey, and multi-unit variants on the same contract.
+An auction protocol with three phases: listing (auctioneer creates parameters), bidding (bidders submit encrypted notes - real escrowed funds, not just commitments), reveal (selective disclosure of bid amounts via viewing key material - revealed amounts must match the encrypted notes, or the bid is forfeit). Force-reveal via threshold auditing if a bidder goes offline. Support first-price, Vickrey, and multi-unit variants on the same contract.
 
 ## Why this isn't just commit-reveal
 

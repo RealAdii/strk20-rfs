@@ -3,7 +3,7 @@ title: "An Umbra-style privacy wallet for Starknet"
 slug: "privacy-wallet"
 ideaNumber: "10"
 genre: "infrastructure"
-pitch: "A wallet that delivers the Umbra UX — publish once, receive privately, spend freely — fully powered by the existing STRK20 privacy pool. No protocol changes. The hard parts are already shipped; what's missing is the UI."
+pitch: "A wallet that delivers the Umbra UX - publish once, receive privately, spend freely - fully powered by the existing STRK20 privacy pool. No protocol changes. The hard parts are already shipped; what's missing is the UI."
 primitives:
   - Privacy Pool
   - Channels (ECDH)
@@ -16,7 +16,7 @@ publishedAt: "2026-05-26"
 
 ## What this enables
 
-- **Umbra-grade UX on a stronger foundation.** Umbra on Ethereum hides the recipient behind a one-time stealth address. STRK20 hides the recipient, the sender, the amount, *and* the token type — all inside encrypted pool storage. Stronger privacy by default; better UX with the right wallet on top.
+- **Umbra-grade UX on a stronger foundation.** Umbra on Ethereum hides the recipient behind a one-time stealth address. STRK20 hides the recipient, the sender, the amount, *and* the token type - all inside encrypted pool storage. Stronger privacy by default; better UX with the right wallet on top.
 - **A real consumer entry point to STRK20.** Right now the privacy pool is accessed via SDK calls. A privacy-first wallet is the user-facing product that brings the rest.
 - **One-key registration.** Umbra requires a 2-key stealth meta-address. STRK20 needs one viewing-key registration. Smaller surface, simpler onboarding.
 
@@ -26,9 +26,9 @@ publishedAt: "2026-05-26"
 | --- | --- | --- |
 | Stealth meta-address (2 public keys) | Registered viewing key | One key, on-chain, simpler |
 | Per-payment stealth address | Per-channel encrypted notes | No visible on-chain address at all |
-| Announcement events for scanning | Discovery service | Off-chain scan — no public event trail |
+| Announcement events for scanning | Discovery service | Off-chain scan - no public event trail |
 | View-tag filtering | Full ECDH decryption | Discovery handles compute; no shortcuts |
-| Relayer for gas-free withdrawals | Pool-mediated withdrawals | Pool is the caller — no separate relayer |
+| Relayer for gas-free withdrawals | Pool-mediated withdrawals | Pool is the caller - no separate relayer |
 | Anonymity set = stealth users | Anonymity set = all pool participants | Shared pool with transfers and apps, not stealth-only |
 
 ## What you build
@@ -39,10 +39,10 @@ A Starknet wallet (browser + mobile) that:
 - Lets the user publish a privacy-pool receive address that anyone can pay to.
 - Runs the discovery service against the user's viewing key to surface incoming notes.
 - Handles sends as `Withdraw` / `CreateEncNote` through the pool with paymaster-sponsored gas.
-- Maintains a clean, "looks like a wallet, behaves like privacy" UI — the discovery, encryption, and proof-construction is all under the hood.
+- Maintains a clean, "looks like a wallet, behaves like privacy" UI - the discovery, encryption, and proof-construction is all under the hood.
 
 No new contracts. No protocol changes. The work is product, UX, and SDK integration.
 
 ## Why it ships
 
-Everything cryptographic is already in production: the pool, channels, the discovery service, the SDK. What's missing is the consumer surface — a wallet that makes private receive-and-spend feel as easy as Venmo. Whoever builds it owns the default entry point to STRK20 for normal users.
+Everything cryptographic is already in production: the pool, channels, the discovery service, the SDK. What's missing is the consumer surface - a wallet that makes private receive-and-spend feel as easy as Venmo. Whoever builds it owns the default entry point to STRK20 for normal users.

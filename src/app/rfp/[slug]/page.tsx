@@ -19,10 +19,10 @@ export async function generateMetadata({
   const rfp = await readRfp(slug);
   if (!rfp) return { title: "Not found" };
   return {
-    title: `${rfp.title} — STRK20`,
+    title: `${rfp.title} - STRK20`,
     description: rfp.pitch,
     openGraph: {
-      title: `${rfp.title} — STRK20`,
+      title: `${rfp.title} - STRK20`,
       description: rfp.pitch,
       type: "article",
     },

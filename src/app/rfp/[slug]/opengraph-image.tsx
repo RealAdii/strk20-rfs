@@ -14,7 +14,7 @@ export default async function OGImage({
   const { slug } = await params;
   const rfp = await readRfp(slug);
 
-  const title = rfp?.title ?? "STRK20 — Request for Startups";
+  const title = rfp?.title ?? "STRK20 - Request for Startups";
   const label = rfp ? `Idea ${rfp.ideaNumber} · ${genreLabel(rfp.genre)}` : "STRK20";
 
   return new ImageResponse(

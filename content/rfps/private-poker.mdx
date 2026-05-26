@@ -19,13 +19,13 @@ publishedAt: "2026-05-26"
 ## What this enables
 
 - **Provably fair online poker.** Every existing platform asks players to trust a black-box RNG. This replaces trust with STARK proofs of correct dealing. Every hand is independently verifiable.
-- **Cryptographic cash games.** Buy in by shielding USDC, play through paymaster-submitted actions, cash out to any address — your stack size, session history, and lifetime results are private unless you choose to disclose.
-- **Tournament infrastructure** — guaranteed prize pools, blind structures, table balancing. Entry fees and payouts as private transfers; organizers verify participants via viewing keys.
+- **Cryptographic cash games.** Buy in by shielding USDC, play through paymaster-submitted actions, cash out to any address - your stack size, session history, and lifetime results are private unless you choose to disclose.
+- **Tournament infrastructure** - guaranteed prize pools, blind structures, table balancing. Entry fees and payouts as private transfers; organizers verify participants via viewing keys.
 - **A platform for any hidden-information game.** The card-as-encrypted-note pattern generalizes to Battleship, Mafia, sealed-bid auctions, and anything else with hidden state. Poker is the proof of concept; the primitives are reusable.
 
 ## What you build
 
-A `PokerGame` contract implementing `privacy_invoke` for deal/bet/fold/reveal/settle. Cards are encrypted STRK20 notes that decrypt only with the player's channel key. Ship with the trusted-dealer shuffle first (STARK-proven from a committed seed — strictly better than every existing platform). V2 explores Noir + Garaga mental poker for heads-up games where the proving overhead is tolerable.
+A `PokerGame` contract implementing `privacy_invoke` for deal/bet/fold/reveal/settle. Cards are encrypted STRK20 notes that decrypt only with the player's channel key. Ship with the trusted-dealer shuffle first (STARK-proven from a committed seed - strictly better than every existing platform). V2 explores Noir + Garaga mental poker for heads-up games where the proving overhead is tolerable.
 
 ## The "only on Starknet" showcase
 
@@ -35,8 +35,8 @@ Encrypted notes as cards, channels as player relationships, session keys for gam
 
 | Element | Hidden | Visible |
 | --- | --- | --- |
-| Player identities | Yes — paymaster submits all tx | |
-| Hole cards | Yes — encrypted notes, only the holder decrypts | |
-| Bet amounts | | Yes — poker bets are public by design |
-| Stack sizes, session history | Yes — held as private notes | |
-| Showdown reveals | | Yes — selective reveal of channel keys at hand end |
+| Player identities | Yes - paymaster submits all tx | |
+| Hole cards | Yes - encrypted notes, only the holder decrypts | |
+| Bet amounts | | Yes - poker bets are public by design |
+| Stack sizes, session history | Yes - held as private notes | |
+| Showdown reveals | | Yes - selective reveal of channel keys at hand end |

@@ -3,7 +3,7 @@ title: "On-chain Among Us with provably fair roles and anonymous votes"
 slug: "social-deduction-game"
 ideaNumber: "09"
 genre: "gaming"
-pitch: "A fully on-chain social deduction game — hidden roles as encrypted notes, night actions as private transfers, voting as anonymous channel transfers. No server can leak roles, no admin can peek, vote tallies are provably correct."
+pitch: "A fully on-chain social deduction game - hidden roles as encrypted notes, night actions as private transfers, voting as anonymous channel transfers. No server can leak roles, no admin can peek, vote tallies are provably correct."
 primitives:
   - Privacy Pool
   - Encrypted Notes (roles)
@@ -18,20 +18,20 @@ publishedAt: "2026-05-26"
 
 ## What this enables
 
-- **Provably fair social deduction.** Every existing Mafia / Werewolf / Among Us game has the same trust problem: the server knows everything. Role assignment, night actions, vote counts — all opaque. STRK20 replaces the server with a smart contract that can't cheat, can't be bribed, and can't play favorites.
-- **Anonymous voting that changes the metagame.** In every existing social deduction game, voting is public or semi-public — which produces degenerate strategies (retaliation, bandwagoning, anchoring by vocal players). Anonymous voting eliminates all of them. The game becomes purer: it shifts from "manipulate voting behavior" to "evaluate evidence."
+- **Provably fair social deduction.** Every existing Mafia / Werewolf / Among Us game has the same trust problem: the server knows everything. Role assignment, night actions, vote counts - all opaque. STRK20 replaces the server with a smart contract that can't cheat, can't be bribed, and can't play favorites.
+- **Anonymous voting that changes the metagame.** In every existing social deduction game, voting is public or semi-public - which produces degenerate strategies (retaliation, bandwagoning, anchoring by vocal players). Anonymous voting eliminates all of them. The game becomes purer: it shifts from "manipulate voting behavior" to "evaluate evidence."
 - **Staked competitive play.** A new category: competitive social deduction with real stakes and cryptographic integrity. Buy in with shielded STRK20, play with provable fairness, win on skill, receive winnings privately. Doesn't exist anywhere today.
-- **A platform for the whole genre.** Role assignment + private actions + anonymous voting generalizes — Secret Hitler, Avalon, Blood on the Clocktower, Coup, One Night Werewolf. The Phase 1 contract is a platform; each variant is a different configuration.
+- **A platform for the whole genre.** Role assignment + private actions + anonymous voting generalizes - Secret Hitler, Avalon, Blood on the Clocktower, Coup, One Night Werewolf. The Phase 1 contract is a platform; each variant is a different configuration.
 
 ## What you build
 
-A game contract managing lobbies, role assignment (STARK-proven from committed seed), turn progression, and resolution. Roles are encrypted STRK20 notes — only the holder decrypts. Night actions (impostor "kills," seer "checks") are private transfers in player-to-game channels. Emergency voting is anonymous channel transfers — vote tally computed publicly, votes themselves unattributable. Session keys for scoped per-game permissions; paymaster so players never sign or pay gas during a round.
+A game contract managing lobbies, role assignment (STARK-proven from committed seed), turn progression, and resolution. Roles are encrypted STRK20 notes - only the holder decrypts. Night actions (impostor "kills," seer "checks") are private transfers in player-to-game channels. Emergency voting is anonymous channel transfers - vote tally computed publicly, votes themselves unattributable. Session keys for scoped per-game permissions; paymaster so players never sign or pay gas during a round.
 
 ## Why this is the killer app argument
 
 Privacy tech needs applications that people actually want to use, not just power-user tools. Social deduction is:
 
-- **Massively popular** — Among Us peaked at 500M MAU.
-- **Naturally multiplayer** — 5–15 players per round, organic network effects.
-- **Session-based** — 15 minutes, low commitment, high engagement.
-- **Improved by privacy**, not just compatible with it — anonymous voting is a genuine gameplay improvement, not a feature bolted on.
+- **Massively popular** - Among Us peaked at 500M MAU.
+- **Naturally multiplayer** - 5–15 players per round, organic network effects.
+- **Session-based** - 15 minutes, low commitment, high engagement.
+- **Improved by privacy**, not just compatible with it - anonymous voting is a genuine gameplay improvement, not a feature bolted on.

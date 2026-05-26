@@ -78,7 +78,7 @@ const components = {
     return (
       <td className="px-4 py-3.5 align-top leading-snug border-r border-line/40 last:border-r-0 [&_code]:font-mono [&_code]:text-[0.85em] [&_code]:text-ember [&_code]:bg-ember/10 [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded-sm">
         {isEmpty ? (
-          <span className="text-muted/30" aria-hidden="true">—</span>
+          <span className="text-muted/30" aria-hidden="true">-</span>
         ) : isYes ? (
           <span className="flex items-start gap-2 text-white">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-ember flex-shrink-0" aria-hidden="true" />
