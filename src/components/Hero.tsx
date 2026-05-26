@@ -26,6 +26,20 @@ export function Hero({ rfpCount: _ }: { rfpCount: number }) {
             <span aria-hidden="true">↓</span>
           </Link>
         </div>
+
+        <div className="mt-8 flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+          {[
+            "$10M+ deployed",
+            "400+ teams backed",
+            "Fundraising intros",
+            "Starknet network access",
+          ].map((stat) => (
+            <span key={stat} className="flex items-center gap-2 font-mono text-[11px] text-muted uppercase tracking-widest">
+              <span className="w-1 h-1 rounded-full bg-ember flex-shrink-0" aria-hidden="true" />
+              {stat}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );
