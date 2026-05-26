@@ -12,8 +12,8 @@
   --color-ember: #e86a2d;
   --color-ember-deep: #b94f1c;
 
-  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-sans: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
 
   --container-content: 72rem;
 }

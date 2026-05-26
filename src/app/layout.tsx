@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { BookingProvider } from "@/components/BookingContext";
 
-const interTight = Inter_Tight({
-  variable: "--font-inter-tight",
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-ibm-plex-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -43,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${interTight.variable} ${jetbrainsMono.variable}`}
+      className={`${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
     >
       <body className="min-h-screen flex flex-col">
         <BookingProvider>{children}</BookingProvider>
