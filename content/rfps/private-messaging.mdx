@@ -1,0 +1,38 @@
+---
+title: "Encrypted on-chain messaging via the privacy pool"
+slug: "private-messaging"
+ideaNumber: "01"
+genre: "social-communications"
+pitch: "A private messaging layer built on the existing privacy pool — sender anonymity, encrypted payloads, persistent channels. No modifications to the pool contract, no trusted server, no metadata."
+primitives:
+  - Privacy Pool
+  - Channels (ECDH)
+  - InvokeExternal
+  - Discovery Service
+  - TypeScript SDK
+publishedAt: "2026-05-26"
+---
+
+## What this enables
+
+- **Encrypted on-chain mail** between any two privacy-pool participants — addresses never appear on-chain, messages decrypt only on the recipient's device.
+- **Payment memos** — attach a message to a private transfer in the same transaction. The first credible "remittance with note" primitive on a public chain.
+- **Escrow negotiation** — parties coordinate terms privately before executing a transfer, without ever leaking the relationship to observers.
+- **A reusable substrate** for any application that needs metadata-resistant messaging — anonymous tips, dissident comms, professional escrow.
+
+## What you build
+
+A helper contract callable via `InvokeExternal` that appends encrypted message payloads to per-channel storage. An off-chain discovery indexer that returns decrypted messages for a given viewing key. SDK methods (`sendMessage`, `discoverMessages`) that reuse the same ECDH channel-key derivation the pool already uses for note encryption.
+
+## Why it ships
+
+The privacy pool already gives you everything hard about secure messaging: key agreement via ECDH, encrypted persistent channels, sender anonymity via `InvokeExternal` (the pool is `msg.sender`, not the user). The work here is the helper contract, the indexer, and an SDK extension. No protocol changes required.
+
+## Hidden vs visible
+
+| Element | Hidden | Visible |
+| --- | --- | --- |
+| Sender identity | Yes — pool is the `msg.sender` | |
+| Recipient identity | Yes — only resolvable via the recipient's viewing key | |
+| Message content | Yes — encrypted with the channel key | |
+| That a message was sent | Partially — an observer sees a pool transaction occurred | Block timestamp |

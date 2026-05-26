@@ -1,0 +1,45 @@
+---
+title: "Bonding-curve token launches with hidden buyers, visible price action"
+slug: "private-pumpfun"
+ideaNumber: "04"
+genre: "markets-trading"
+pitch: "A Pump.fun-style launchpad where bonding-curve mechanics, trade sizes, and the social feed stay fully visible — but no observer can attribute any trade to any wallet. Whales buy without triggering copy-trade cascades; devs sell without panic dumps."
+primitives:
+  - Privacy Pool
+  - Open Notes
+  - InvokeExternal
+  - Paymaster (Avnu)
+  - Session Keys
+  - Ekubo Swap Helper
+  - Multi-Asset Pool
+publishedAt: "2026-05-26"
+---
+
+## What this enables
+
+- **Whale-safe token launches.** A 50K USDC buy is visible. The price impact is visible. The buyer is not. No Nansen alert. No "smart money" notification. No copy-trade cascade.
+- **Dev-safe token creation.** Creators launch without their wallet becoming a permanent surveillance target. Sells show on the curve (price drops); attribution to the dev wallet does not.
+- **Anonymous participation across launches.** Users participate in dozens of launches without building a trackable on-chain profile. No wallet-level history for analytics to aggregate.
+- **Post-graduation privacy continuity.** When a token graduates to Ekubo, the existing swap helper keeps trading private. Full lifecycle anonymity — no other chain offers this.
+
+## What you build
+
+A `BondingCurveFactory` deploying per-token curves. Each curve is a `privacy_invoke` helper handling buy / sell / graduate. Buyers route USDC notes through the pool, the curve computes tokens-out, returns them as an `OpenNoteDeposit`. At market-cap threshold, anyone calls `graduate` and liquidity migrates to Ekubo with the curve's final price. The social feed reads public events (amounts, timestamps, price) — just no "who."
+
+## What it doesn't solve
+
+Sniping. Bots that monitor for new contract deployments still work — they don't need to know who you are to front-run. Anti-snipe (launch delay, commit-reveal first block, rate limits, graduated fees) is layered on top as optional modules.
+
+## The revenue argument
+
+Pump.fun does $25–31M/month in fees even in bear markets. A Starknet version capturing 1% of the memecoin launch market is $250–310K/month. The privacy angle attracts the segment most willing to pay premium fees for anonymity — whales, alpha hunters, sensitive creators.
+
+## Hidden vs visible
+
+| Element | Hidden | Visible |
+| --- | --- | --- |
+| Buyer / seller identity | Yes — paymaster submits all tx | |
+| Trade amounts | | Yes — open notes are plaintext |
+| Price, market cap, supply | | Yes — bonding curve state is public |
+| Dev token holdings | Yes — encrypted notes in the pool | |
+| Total volume, trade history | | Yes (aggregate) — but not attributable |

@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-field: #0c0a18;
+  --color-inset: #13102a;
+  --color-surface: #151225;
+  --color-panel: #1e1a30;
+  --color-line: #2a2640;
+  --color-white: #ffffff;
+  --color-body: #b0acc0;
+  --color-muted: #7a7490;
+  --color-ember: #e86a2d;
+  --color-ember-deep: #b94f1c;
+
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --container-content: 72rem;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-field);
+    color: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-field);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-field);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-ember);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: var(--color-white);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+@utility container-content {
+  width: 100%;
+  max-width: var(--container-content);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* RFP body section counter */
+.rfp-body {
+  counter-reset: rfp-section;
+}
+
+.rfp-body h2::before {
+  counter-increment: rfp-section;
+  content: "0" counter(rfp-section);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  color: var(--color-ember);
+  opacity: 0.5;
+  margin-bottom: 0.5rem;
+}

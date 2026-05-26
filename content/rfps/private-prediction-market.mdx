@@ -1,0 +1,40 @@
+---
+title: "Prediction markets with visible odds and invisible bettors"
+slug: "private-prediction-market"
+ideaNumber: "07"
+genre: "markets-trading"
+pitch: "Bet sizes and odds stay fully visible — the information aggregation works. Bettor identities are completely hidden. Markets stay informationally efficient while the identity-based manipulation that plagues Polymarket disappears."
+primitives:
+  - Privacy Pool
+  - Open Notes
+  - InvokeExternal
+  - Viewing Keys
+  - Paymaster (Avnu)
+  - Pragma Oracle
+publishedAt: "2026-05-26"
+---
+
+## What this enables
+
+- **Informationally efficient markets without identity leakage.** Polymarket's accuracy comes from visible bet flow driving accurate odds. The same visibility creates whale tracking, herding, and bettor pressure. Academic research shows anonymous betting produces *more* accurate forecasts — bandwagoning is replaced with independent information aggregation.
+- **Institutional prediction markets.** Corporations want internal forecasting markets (project completion, strategic decisions, sales targets) but can't because positions become political. An executive betting against their own division's timeline is a career risk. Anonymous betting unlocks the use case entirely.
+- **Political and sensitive markets, less regulatory exposure.** France blocked Polymarket. The CFTC has taken enforcement actions. Visible large positions on political outcomes create narratives that influence the outcomes themselves. Anonymous betting separates information aggregation from attribution.
+- **Cross-market privacy for professional bettors.** Polymarket lets sophisticated observers build wallet-level profiles: hit rate, sector specialization, holding patterns. Professional edge gets copied. STRK20 prevents the profiling.
+
+## What you build
+
+A `PredictionMarket` helper with per-question state (outcomes, resolution source, deadline, per-outcome volume) and `privacy_invoke` for bet / claim. Bets are open notes to the market contract (amounts public, identity hidden via paymaster). Resolution writes the winning outcome; winners claim payouts as private transfers. Per-market oracle binding (Pragma for prices, designated resolver or DAO vote for non-price outcomes).
+
+## Why this works on Starknet specifically
+
+Compliance-first privacy (viewing keys make it auditable), DeFi composability in the pool (open notes + `InvokeExternal`), production paymaster + session keys. Other privacy chains lack at least one of these — and the lack of any one breaks the institutional use case.
+
+## Hidden vs visible
+
+| Element | Hidden | Visible |
+| --- | --- | --- |
+| Bettor identity | Yes — paymaster submits all tx | |
+| Bet amounts | | Yes — open notes, drives accurate odds |
+| Current odds, per-outcome volume | | Yes — public market state |
+| Resolution | | Yes — verifiable from oracle / resolver |
+| Bettor's cross-market profile | Yes — no wallet-level history accumulates | |
