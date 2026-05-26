@@ -10,7 +10,7 @@ export function Hero({ rfpCount: _ }: { rfpCount: number }) {
           Request for Startups
         </h1>
         <p className="mt-8 text-lg sm:text-xl text-body max-w-xl mx-auto leading-relaxed">
-          These are problems we&rsquo;d love to see startups tackle on STRK20 —
+          These are problems we&rsquo;d love to see startups tackle on STRK20,
           our standard for compliant, programmable privacy. If one excites you,
           treat it as validation to dive in.
         </p>

@@ -58,8 +58,8 @@ export function BookingModal({ isOpen, idea, onClose }: Props) {
               {idea ? `Building "${idea}"?` : "Building on STRK20?"}
             </h2>
             <p className="mt-2 text-sm sm:text-base text-body max-w-xl">
-              Tell us what you&rsquo;re working on. We support builders every step — fundraising intros, $25K packages, and the Starkware network. 400+ teams backed.
-              Skip anything you&rsquo;d rather not share — the slot is the only required part.
+              Tell us what you&rsquo;re working on. We support builders every step: fundraising intros, $25K packages, and the Starkware network. 400+ teams backed.
+              Skip anything you&rsquo;d rather not share. The slot is the only required part.
             </p>
           </div>
           <button
