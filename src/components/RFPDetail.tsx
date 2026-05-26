@@ -33,7 +33,7 @@ export function RFPDetail({ rfp, related }: { rfp: RFP; related: RFP[] }) {
               {rfp.pitch}
             </p>
 
-            <div className="mt-16 border-t border-line">
+            <div className="mt-16">
               <RFPBody source={rfp.content} />
             </div>
           </div>
