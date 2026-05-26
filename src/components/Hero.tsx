@@ -1,18 +1,18 @@
 import Link from "next/link";
 import { TalkToUsButton } from "./TalkToUsButton";
 
-export function Hero({ rfpCount }: { rfpCount: number }) {
+export function Hero({ rfpCount: _ }: { rfpCount: number }) {
   return (
     <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 border-b border-line text-center">
       <div className="container-content max-w-3xl">
-        <p className="eyebrow mb-8">STRK20 · Request for Startups · 2026</p>
+        <p className="eyebrow mb-8">STRK20 · 2026</p>
         <h1 className="text-[52px] sm:text-[72px] lg:text-[88px] italic font-medium leading-[0.92] tracking-[-0.03em] text-white">
           Request for Startups
         </h1>
         <p className="mt-8 text-lg sm:text-xl text-body max-w-xl mx-auto leading-relaxed">
-          {rfpCount} open problems Starkware wants solved on STRK20 — the
-          standard for compliant, programmable privacy. Find one that fits,
-          show us what you&rsquo;re working on.
+          These are problems we&rsquo;d love to see startups tackle on STRK20 —
+          our standard for compliant, programmable privacy. If one excites you,
+          treat it as validation to dive in.
         </p>
         <div className="mt-10 flex flex-wrap justify-center items-center gap-3">
           <TalkToUsButton size="lg" variant="primary">
