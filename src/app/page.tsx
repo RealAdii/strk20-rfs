@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { FilterChips } from "@/components/FilterChips";
 import { RFPList } from "@/components/RFPList";
+import { SocialProof } from "@/components/SocialProof";
 import { readAllRfps, GENRES, type Genre } from "@/lib/rfps";
 
 export default async function HomePage() {
@@ -24,6 +25,7 @@ export default async function HomePage() {
       <Header />
       <main className="flex-1">
         <Hero rfpCount={rfps.length} />
+        <SocialProof />
         <Suspense fallback={null}>
           <FilterChips counts={counts} />
         </Suspense>
